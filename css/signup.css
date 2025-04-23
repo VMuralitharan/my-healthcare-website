@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../assets/header.jpg);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;  /* Increased height of the container */
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 40px;  /* Increased padding */
+    border-radius: 10px;
+    border: 2px solid #ddd; /* Border outline for the login box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;  /* Increased width */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;  /* Increased margin */
+    font-size: 24px;  /* Larger font size */
+}
+
+.textbox {
+    margin-bottom: 25px;  /* Increased margin */
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;  /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;  /* Larger font size */
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;  /* Increased margin */
+}
+
+.remember-me input {
+    margin-right: 15px;  /* Increased margin */
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;  /* Increased padding */
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;  /* Larger font size */
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;  /* Increased margin */
+}
+
+.links a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;  /* Larger font size */
+    margin: 0 10px;  /* Increased margin */
+}
+
+.links a:hover {
+    text-decoration: underline;
+}

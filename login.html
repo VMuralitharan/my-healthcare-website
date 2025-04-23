@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./css/login.css"> <!-- Correct your CSS path -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm" action="#" method="post">
+                <div class="textbox">
+                    <input type="text" placeholder="Username" name="username" id="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" id="password" required>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <input type="submit" value="Login" class="btn">
+            </form>
+            <div class="links">
+                <a href="signup.html">Don't have an account? Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+
+            if (userDetails && userDetails.email === username && userDetails.password === password) {
+                localStorage.setItem('isLoggedIn', 'true'); // Set logged-in flag
+                window.location.href = 'index.html'; // Redirect to main page
+            } else {
+                alert('Invalid credentials, please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
