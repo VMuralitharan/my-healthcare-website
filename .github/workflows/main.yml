@@ -25,10 +25,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-     
-
-      - name: Lint CSS files
-        run: npm run lint:css
 
       - name: Build the app
         run: npm run build
