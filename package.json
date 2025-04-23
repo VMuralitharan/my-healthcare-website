@@ -3,19 +3,18 @@
   "version": "1.0.0",
   "description": "A Node.js-based healthcare website with CI integration",
   "main": "index.js",
-"scripts": {
-  "start": "node index.js",
-  "dev": "nodemon index.js",
-  "lint:html": "npx htmlhint '**/*.html'", 
-  "lint:css": "stylelint '**/*.css'",
-  "lint:js": "eslint '**/*.js'",
-  "format": "prettier --write .",
-  "test": "jest",
-  "test:coverage": "jest --coverage",
-  "prebuild": "npm run lint:html && npm run lint:css && npm run lint:js",
-  "build": "webpack --config webpack.config.js"
-},
-
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+     "lint:html": "npx htmlhint \"C:/Users/VM/Desktop/HEALTH-CARE-main/**/*.html\"",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:js": "eslint '**/*.js'",
+    "format": "prettier --write .",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prebuild": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "build": "webpack --config webpack.config.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VMuralitharan/my-healthcare-website.git"
