@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"✅ Tests passed!\"",
-    "build": "echo Building app..."
+    "test": "jest --coverage",
+    "build": "echo Building app...",
+    "lint:commit": "commitlint --from=HEAD~1",
+    "prepare": "husky install",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "",
