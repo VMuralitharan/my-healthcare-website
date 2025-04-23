@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "lint": "eslint 'src/**/*.js'",  
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "prebuild": "npm run lint",
-    "build": "webpack --config webpack.config.js"
+"scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js",
+  "lint:html": "htmlhint '**/*.html'", 
+  "lint:css": "stylelint '**/*.css'",  
+  "test": "jest",
+  "test:coverage": "jest --coverage",
+  "prebuild": "npm run lint:html && npm run lint:css",  
+  "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
