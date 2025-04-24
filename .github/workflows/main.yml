@@ -1,40 +1,41 @@
-name: integration
+name: deploy
 
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
 
 jobs:
-  test-on-node:
-    name: Test on Node.js ${{ matrix.node-version }}
+  deploy:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
         node-version: [18.x, 20.x, 22.x]
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
+      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Build the app
-        run: npm run build
-
+      # Run tests
       - name: Run tests
-        run: npm run test
+        run: npm test
 
-      - name: Upload test coverage (if generated)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-${{ matrix.node-version }}
-          path: coverage/
+      # Log in to Docker Hub
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.PASSWORD }}" | docker login -u ${{ secrets.USERNAME }} --password-stdin
 
+      # Build Docker image with commit SHA as tag
+      - name: Build Docker image
+        run: docker build -t murali098/project:${{ github.sha }} .
+
+      # Push Docker image
+      - name: Push Docker image
+        run: docker push murali098/project:${{ github.sha }}
