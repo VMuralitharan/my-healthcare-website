@@ -1,13 +1,10 @@
 {
-  "name": "food-donation",
+  "name": "health care",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
     "test": "jest --coverage",
-    "build": "echo Building app...",
-    "lint:commit": "commitlint --from=HEAD~1",
-    "prepare": "husky install",
-    "release": "standard-version"
+    "build": "echo Building app..."
   },
   "keywords": [],
   "author": "",
