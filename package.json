@@ -1,26 +1,21 @@
 {
-  "name": "health-care-main",
+  "name": "health care",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VMuralitharan/my-healthcare-website.git"
+    "test": "jest --coverage",
+    "build": "echo Building app..."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VMuralitharan/my-healthcare-website/issues"
-  },
-  "homepage": "https://github.com/VMuralitharan/my-healthcare-website#readme",
-  "dependencies": {
-    "ajv": "^8.17.1",
-    "express": "^5.1.0",
-    "json5": "^2.2.3",
-    "lodash": "^4.17.21"
-  },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitlint": "^19.8.0",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "standard-version": "^9.5.0"
+  }
 }
